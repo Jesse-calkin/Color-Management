@@ -6,35 +6,53 @@ Open the color picker [with this app](Color Picker.app).
 
 Create a new palette
 
-![Create a new palette with the color picker](createPalette.gif)
+![Create a new palette with the color picker](Media/createPalette.gif)
 
 Find the new palette in `~/Library/Colors`
 
-![Finder view of Colors directory](colorsDir.png)
+![Finder view of Colors directory](Media/colorsDir.png)
 
 Copy and/or share the `.clr` file. The receiving user will need to add it to their `~/Library/Colors` directory, which may need to be created if it does not exist.
 
 The receiving user may need to restart any applications(eg. Xcode) that were running when they added the palette for it to show up initially.
 
-## iOS
+## Color Class Usage
 
 ### Base Colors
 
 ```
-public struct Colors {
-    public static let blue1 = UIColor(red: 0.0, green: 0.0, blue: 1.0, alpha: 1.0)
-    public static let blue2 = UIColor(red: 0.0, green: 0.4, blue: 1.0, alpha: 1.0)
-    public static let blue3 = UIColor(red: 0.1, green: 0.0, blue: 1.0, alpha: 1.0)
-    public static let blue4 = UIColor(red: 0.2, green: 0.2, blue: 1.0, alpha: 1.0)
+public struct Palette {
+
+    //MARK: - Blues
+
+    public static let Blue1: Color = "#0E7FF9"
+    public static let Blue2: Color = "#006BB6"
+    public static let Blue3: Color = "#002F50"
+    public static let Blue4: Color = "#072840"
+    public static let Blue5: Color = "#051c2D"
+
+    //MARK: - Greys
+
+    public static let Grey1: Color = "#66737C"
+    public static let Grey2: Color = "#CCD0D3"
+    public static let Grey3: Color = "#E6E8EA"
+    public static let Grey4: Color = "#F3F4F5"
+
+    //MARK: - Reds
+
+    public static let Red1: Color = "#E11647"
+
+    //MARK: - Whites
+
+    public static let White1: Color = "#FFFFFF"
 }
 ```
 
 ### Semantic Names
 
 ```
-extension Colors {
-    public static var navbarBlue: UIColor { return Colors.blue1 }
-    public static var subnavBlue: UIColor { return Colors.blue3 }
+public extension Palette {
+    public static let navbarBlue = Palette.Blue1
 }
 ```
 
